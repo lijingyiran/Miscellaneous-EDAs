@@ -1,0 +1,72 @@
+---
+title: "Lecture 2 STAT545"
+output:
+  pdf_document: default
+  word_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, error= TRUE)
+```
+
+Line order of operation on a variable does not matter as long as the variable has previously been run and is present in the environment. 
+
+
+Making vector:
+```{r, echo=FALSE}
+times <- c(60, 40, 33, 15, 20, 55, 35)
+times/60
+```
+
+Getting characteristics of the vector:
+
+```{r}
+mean(times)
+sqrt(times)
+range(times)
+```
+
+Logical operations:
+```{r}
+times <30
+times == 20
+
+times > 20 & times < 50
+times < 20 | times > 50
+
+which(times <30) # return the indices of the numbers in the vector that satisfy this logical statement
+```
+
+Subsetting:
+
+```{r}
+times[3]
+times[-3]
+times[c(2,4)]
+times[3,5]
+times[1:5] # gives the first 5 elements
+times[times < 30] #get values in the vector that satisfy the logical statement
+
+times[times > 50] <- 50 #replace the values that are greater than 50 with 50
+```
+
+Missing Values:
+```{r}
+times[8] <- NA
+times
+mean(times, na.rm = TRUE)
+?mean #access documentation of a function: put a question mark 
+mean(na.rm=TRUE, x=times)
+mean(times, 0, TRUE)
+```
+
+Data frame and operations:
+
+```{r}
+mtcars
+str(mtcars) #prints the structure of the dataframe 
+names(mtcars)
+```
+
+
+
+
