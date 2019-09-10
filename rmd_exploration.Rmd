@@ -1,0 +1,33 @@
+---
+title: "Tibble Exploration"
+output: 
+  html_document:
+    toc: TRUE
+    number_sections: TRUE
+    theme: cerulean
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, warning=FALSE, echo=FALSE}
+library(tibble)
+library(gapminder)
+library(DT)
+```
+
+
+## Print out gapminder data:
+```{r}
+gapminder
+```
+
+<!-- This is a comment that won't be printed in html-->
+
+Convert mtcars to a tibble, and wrap in datatable:
+```{r}
+datatable(as_tibble(mtcars))
+```
+
